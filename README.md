@@ -100,7 +100,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Thanks a lot for spending your time helping DevConf grow. Thanks a lot! Keep rocking 🍻
 
-[![Contributors](https://contrib.rocks/image?repo=ax-studios/percive/)](https://github.com/ax-studios/percive/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=ax-studios/percive)](https://github.com/ax-studios/percive/graphs/contributors)
 
 ## 🙏 Support
 
