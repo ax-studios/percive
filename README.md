@@ -1,6 +1,6 @@
 # Percive
 
-[![Percive BANNER](/public/static/gh_banner.png)](https://percive.vercel.app/)
+[![Percive BANNER](/public/images/large-og.png)](https://percive.vercel.app/)
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit/) [![Issues](https://img.shields.io/github/issues/ax-studios/percive)](https://github.com/ax-studios/percive/issues) [![Contributors](https://img.shields.io/github/contributors/ax-studios/percive)](https://github.com/ax-studios/percive/graphs/contributors) ![Forks](https://img.shields.io/github/forks/ax-studios/percive) ![Stars](https://img.shields.io/github/stars/ax-studios/percive)
 
