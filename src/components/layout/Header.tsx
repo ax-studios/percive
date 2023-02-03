@@ -1,31 +1,19 @@
-import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import UnstyledLink from '@/components/links/UnstyledLink';
+interface Props {
+  title: string;
+}
 
-const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
-
-export default function Header() {
+export default function MenuAppBar({ title }: Props) {
   return (
-    <header className='sticky top-0 z-50 bg-white'>
-      <div className='layout flex h-14 items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
-        </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <AppBar position='static'>
+      <Toolbar>
+        <Typography variant='h3' component='div' sx={{ flexGrow: 1 }}>
+          {title}
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }

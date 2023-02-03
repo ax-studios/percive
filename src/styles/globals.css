@@ -77,8 +77,8 @@
 
   .layout {
     /* 1100px */
-    max-width: 68.75rem;
-    @apply mx-auto w-11/12;
+    /* max-width: 68.75rem; */
+    @apply p-4;
   }
 
   .bg-dark a.custom-link {
