@@ -102,8 +102,3 @@ Thanks a lot for spending your time helping DevConf grow. Thanks a lot! Keep roc
 
 [![Contributors](https://contrib.rocks/image?repo=ax-studios/percive/)](https://github.com/ax-studios/percive/graphs/contributors)
 
-## 🙏 Support
-
-This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
-
-![](https://camo.githubusercontent.com/37b009b52b3a9af7886f52e75cd76d1b32fef331ab1dc2108089c0ced0b7635f/68747470733a2f2f7777772e6461746f636d732d6173736574732e636f6d2f33313034392f313631383938333239372d706f77657265642d62792d76657263656c2e737667)
