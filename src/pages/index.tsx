@@ -1,6 +1,4 @@
-import { Button } from '@mui/material';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import List from '@mui/material/List';
@@ -12,6 +10,7 @@ import { useEffect, useState } from 'react';
 
 import quotes from '@/lib/quotes';
 
+import BlogCard from '@/components/cards/BlogCard';
 import FixedBottomNavigation from '@/components/layout/BottomNavigationBar';
 import MenuAppBar from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -90,30 +89,16 @@ export default function HomePage() {
                 </ListItem>
               ))}
             </List>
-            <Typography sx={{ mt: '1rem' }} variant='h4'>
+            <Typography sx={{ my: '1rem' }} variant='h4'>
               Today's Article
             </Typography>
 
-            <Card sx={{ mt: '1rem' }}>
-              <CardMedia
-                component='img'
-                className='aspect-video'
-                image='https://source.unsplash.com/random/?nature&1&dpr=16/9'
-                alt='green iguana'
-              />
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Lizard
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button>Read more</Button>
-              </CardActions>
-            </Card>
+            <BlogCard
+              index={4}
+              title='Creating Diversity and Inclusion at College: The C.A.R.E. Approach'
+              description='The CARE approach is a teaching method designed to assist instructors in discussing race and racism with college students in the classroom setting. The four principles of the CARE approach include cultivate, acknowledge, recognize, and empower.'
+              href='https://oasisapp.com/creating-diversity-and-inclusion-at-college/'
+            />
           </div>
         </section>
       </main>

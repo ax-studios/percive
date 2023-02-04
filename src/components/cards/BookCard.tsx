@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 
 type Props = {
   i: number;
+  name: string;
 } & (
   | {
       pages: number;
@@ -18,7 +19,7 @@ type Props = {
     }
 );
 
-export default function BookCard({ pages, readed, i }: Props) {
+export default function BookCard({ pages, readed, i, name }: Props) {
   return (
     <Card sx={{ maxWidth: '200px', width: '100%' }}>
       <CardActionArea>
@@ -38,7 +39,7 @@ export default function BookCard({ pages, readed, i }: Props) {
             variant='h5'
             component='h3'
           >
-            Lizard
+            {name}
           </Typography>
           {readed && (
             <>

@@ -4,10 +4,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-export default function BlogCard({ index }: { index: number }) {
+import UnstyledLink from '@/components/links/UnstyledLink';
+
+type Props = {
+  index: number;
+  title: string;
+  description: string;
+  href: string;
+};
+
+export default function BlogCard({ index, href, description, title }: Props) {
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea LinkComponent={UnstyledLink} href={href}>
         <CardMedia
           component='img'
           height='140'
@@ -17,11 +26,10 @@ export default function BlogCard({ index }: { index: number }) {
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
-            Lizard
+            {title}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

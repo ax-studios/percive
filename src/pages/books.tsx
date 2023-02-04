@@ -17,8 +17,8 @@ export default function BooksPage() {
             Recommended
           </Typography>
           <div className='grid grid-cols-[200px_200px] gap-3 pt-4'>
-            <BookCard i={5} />
-            <BookCard i={6} />
+            <BookCard i={5} name='The Hunger Games' />
+            <BookCard i={6} name="Harry Potter and the Philosopher's Stone" />
           </div>
           <div className='pt-4'>
             <Typography variant='h2' className='text-3xl font-bold'>
@@ -26,10 +26,15 @@ export default function BooksPage() {
             </Typography>
           </div>
           <div className='flex flex-wrap gap-3 pt-4'>
-            <BookCard pages={40} readed={14} i={1} />
-            <BookCard pages={40} readed={3} i={2} />
-            <BookCard pages={40} readed={25} i={3} />
-            <BookCard pages={40} readed={40} i={4} />
+            <BookCard pages={40} readed={14} i={1} name='Twilight' />
+            <BookCard pages={40} readed={3} i={2} name='The Great Gatsby' />
+            <BookCard
+              pages={40}
+              readed={25}
+              i={3}
+              name='The Catcher in the Rye'
+            />
+            <BookCard pages={40} readed={40} i={4} name='Angels & Demons' />
           </div>
         </section>
       </main>
