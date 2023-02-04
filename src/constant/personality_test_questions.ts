@@ -739,7 +739,7 @@ const Questions: QuesstionType[] = [
   {
     Answer: [
       {
-        type: 'T',
+        type: 'F',
         text: 'accept one another and live together in peace.',
       },
       {
