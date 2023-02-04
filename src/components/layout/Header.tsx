@@ -15,7 +15,12 @@ export default function MenuAppBar({ title }: Props) {
       }}
     >
       <Toolbar>
-        <Typography variant='h3' component='div' sx={{ flexGrow: 1 }}>
+        <Typography
+          variant='h3'
+          component='div'
+          sx={{ flexGrow: 1 }}
+          className='capitalize'
+        >
           {title}
         </Typography>
       </Toolbar>

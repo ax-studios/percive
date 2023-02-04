@@ -34,7 +34,9 @@ export default function LoginPage() {
             flexDirection='column'
             height='100%'
           >
-            <Typography variant='h1'>Login</Typography>
+            <Typography variant='h1' sx={{ mt: 'auto' }}>
+              Login
+            </Typography>
             <TextField
               sx={{ width: '100%', mt: '1rem' }}
               label='Email'
@@ -62,6 +64,10 @@ export default function LoginPage() {
             >
               Login
             </Button>
+            <Typography sx={{ textAlign: 'center', mt: 'auto' }}>
+              When you will refresh it will logout. It is for maintaining the
+              privacy of the user.
+            </Typography>
           </Box>
         </div>
       </main>

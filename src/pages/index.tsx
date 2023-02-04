@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -11,10 +12,10 @@ import { useEffect, useState } from 'react';
 
 import quotes from '@/lib/quotes';
 
-import TextButton from '@/components/buttons/TextButton';
 import FixedBottomNavigation from '@/components/layout/BottomNavigationBar';
 import MenuAppBar from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
+import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
@@ -79,7 +80,11 @@ export default function HomePage() {
                     />
                   </ListItemAvatar>
                   <ListItemText
-                    primary={test.title}
+                    primary={
+                      <UnstyledLink href={`/test/${test.href}`}>
+                        {test.title}
+                      </UnstyledLink>
+                    }
                     secondary={test.description}
                   />
                 </ListItem>
@@ -106,7 +111,7 @@ export default function HomePage() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <TextButton>Read more</TextButton>
+                <Button>Read more</Button>
               </CardActions>
             </Card>
           </div>
