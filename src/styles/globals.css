@@ -28,11 +28,11 @@
 }
 
 ::-webkit-scrollbar {
-  @apply h-[6px] w-[6px] rounded-full bg-[#ffffff30];
+  @apply h-[6px] w-[6px] rounded-full bg-[#00000070];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-[#ffffff80];
+  @apply rounded-full bg-[#ffffff];
 }
 
 @layer base {

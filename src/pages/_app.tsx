@@ -1,7 +1,9 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
@@ -11,10 +13,10 @@ import { validateAuth } from '@/lib/appwrite';
 import logger from '@/lib/logger';
 import { createTheme } from '@/lib/theme';
 
-// storyblokInit({
-//   accessToken: 'DVoOsmwXTrIlCGQOxMjgDAtt',
-//   use: [apiPlugin],
-// });
+storyblokInit({
+  accessToken: 'DVoOsmwXTrIlCGQOxMjgDAtt',
+  use: [apiPlugin],
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const muiTheme = createTheme('light');
@@ -30,6 +32,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [user]);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Head>
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+        />
+      </Head>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
         <Component {...pageProps} />

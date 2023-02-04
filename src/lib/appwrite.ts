@@ -2,9 +2,8 @@ import { Account, Client, ID } from 'appwrite';
 
 import logger from './logger';
 //create client
-const client = new Client();
+export const client = new Client();
 client.setEndpoint('https://axstudios.ml/v1').setProject('percive-htf');
-
 //create account
 const account = new Account(client);
 
