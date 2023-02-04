@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 
 import logger from '@/lib/logger';
 
+import FixedBottomNavigation from '@/components/layout/BottomNavigationBar';
 import MenuAppBar from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
@@ -21,9 +22,9 @@ export default function JournelPage() {
     <Layout>
       <Seo templateTitle='Journel' />
       <MenuAppBar title='Journel' />
-      <main>
+      <main className='flex-grow overflow-auto'>
         <section className=''>
-          <div className='layout min-h-screen'>
+          <div className='layout'>
             <div className='flex gap-3'>
               {dates.map((date) => (
                 <Card
@@ -83,6 +84,7 @@ export default function JournelPage() {
           </div>
         </section>
       </main>
+      <FixedBottomNavigation />
     </Layout>
   );
 }

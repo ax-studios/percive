@@ -27,6 +27,14 @@
   /* #endregion  /**======== Primary Color =========== */
 }
 
+::-webkit-scrollbar {
+  @apply h-[6px] w-[6px] rounded-full bg-[#ffffff30];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-[#ffffff80];
+}
+
 @layer base {
   /* inter var - latin */
   @font-face {

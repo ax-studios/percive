@@ -4,14 +4,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-export default function BlogCard() {
+export default function BlogCard({ index }: { index: number }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card>
       <CardActionArea>
         <CardMedia
           component='img'
           height='140'
-          image='/images/contemplative-reptile.jpg'
+          className='aspect-video'
+          image={`https://source.unsplash.com/random/?nature&${index}`}
           alt='green iguana'
         />
         <CardContent>

@@ -2,9 +2,12 @@ import { CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-type Props =
+type Props = {
+  i: number;
+} & (
   | {
       pages: number;
       readed: number;
@@ -12,15 +15,16 @@ type Props =
   | {
       pages?: never;
       readed?: never;
-    };
+    }
+);
 
-export default function BookCard({ pages, readed }: Props) {
+export default function BookCard({ pages, readed, i }: Props) {
   return (
     <Card sx={{ maxWidth: 200, height: 'min-content' }}>
       <CardActionArea>
         <CardMedia
           component='img'
-          image='/images/contemplative-reptile.jpg'
+          image={`https://source.unsplash.com/random/?book&${i}`}
           alt='green iguana'
           className='h-52'
         />
@@ -37,9 +41,21 @@ export default function BookCard({ pages, readed }: Props) {
             Lizard
           </Typography>
           {readed && (
-            <Typography variant='subtitle1' component='p'>
-              {readed} / {pages}
-            </Typography>
+            <>
+              <Typography variant='subtitle1' component='p'>
+                {readed} / {pages}
+              </Typography>
+              <Paper
+                className='relative mt-2 h-4 w-full rounded-lg bg-white/20'
+                variant='elevation'
+                elevation={3}
+              >
+                <div
+                  className='absolute top-0 h-full  rounded-lg bg-primary-500'
+                  style={{ width: `${(readed / pages) * 100}%` }}
+                ></div>
+              </Paper>
+            </>
           )}
         </CardContent>
       </CardActionArea>

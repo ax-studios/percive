@@ -1,44 +1,134 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
+import { useEffect, useState } from 'react';
 
+import quotes from '@/lib/quotes';
+
+import TextButton from '@/components/buttons/TextButton';
+import FixedBottomNavigation from '@/components/layout/BottomNavigationBar';
+import MenuAppBar from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
+  const [quote, setQuote] = useState<null | {
+    quoteText: string;
+    quoteAuthor: string;
+  }>(null);
+
+  // Function to generate random number
+  function randomNumber(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
+  useEffect(() => {
+    setQuote(quotes[Math.floor(randomNumber(0, quotes.length))]);
+  }, []);
   return (
     <Layout>
-      <Seo />
+      <Seo templateTitle='Home' />
+      <MenuAppBar title='Home' />
+      <main className='flex-grow overflow-auto'>
+        <section className=''>
+          <div className='layout'>
+            <Card>
+              <CardMedia
+                component='img'
+                className='aspect-video'
+                image='https://source.unsplash.com/random/?nature'
+                alt='green iguana'
+              />
+              <CardContent>
+                <Typography variant='h5' component='div'>
+                  {quote?.quoteText}
+                </Typography>
+                <Typography variant='subtitle1' component='p'>
+                  - {quote?.quoteAuthor}
+                </Typography>
+              </CardContent>
+            </Card>
+            <Typography sx={{ mt: '1rem' }} variant='h4'>
+              Tests
+            </Typography>
+            <List
+              sx={{
+                width: '100%',
+                mt: '1rem',
+                bgcolor: 'background.paper',
+                borderRadius: '1.3rem',
+                overflow: 'hidden',
+              }}
+            >
+              {tests.map((test, i) => (
+                <ListItem alignItems='flex-start' key={test.title}>
+                  <ListItemAvatar>
+                    <CardMedia
+                      component='img'
+                      className='mr-3 aspect-video rounded-xl'
+                      sx={{ width: '140px' }}
+                      image={`https://source.unsplash.com/random/?nature&${i}&dpr=16/9`}
+                      alt='green iguana'
+                    />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={test.title}
+                    secondary={test.description}
+                  />
+                </ListItem>
+              ))}
+            </List>
+            <Typography sx={{ mt: '1rem' }} variant='h4'>
+              Today's Article
+            </Typography>
 
-      <main>
-        <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <Box sx={{ flexGrow: 1 }}>
-              <AppBar position='static'>
-                <Toolbar>
-                  <IconButton
-                    size='large'
-                    edge='start'
-                    color='inherit'
-                    aria-label='menu'
-                    sx={{ mr: 2 }}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-                    News
-                  </Typography>
-                  <Button color='inherit'>Login</Button>
-                </Toolbar>
-              </AppBar>
-            </Box>
+            <Card sx={{ mt: '1rem' }}>
+              <CardMedia
+                component='img'
+                className='aspect-video'
+                image='https://source.unsplash.com/random/?nature&1&dpr=16/9'
+                alt='green iguana'
+              />
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <TextButton>Read more</TextButton>
+              </CardActions>
+            </Card>
           </div>
         </section>
       </main>
+      <FixedBottomNavigation />
     </Layout>
   );
 }
+
+const tests = [
+  {
+    title: 'Presonality test',
+    description: 'some description',
+    href: 'presonality',
+  },
+  {
+    title: 'trauma test',
+    description: 'some description',
+    href: 'trauma',
+  },
+  {
+    title: 'Stress test',
+    description: 'some description',
+    href: 'stress',
+  },
+];
