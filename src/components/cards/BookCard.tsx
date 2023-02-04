@@ -20,7 +20,7 @@ type Props = {
 
 export default function BookCard({ pages, readed, i }: Props) {
   return (
-    <Card sx={{ maxWidth: 200, height: 'min-content' }}>
+    <Card sx={{ maxWidth: '200px', width: '100%' }}>
       <CardActionArea>
         <CardMedia
           component='img'
@@ -46,7 +46,7 @@ export default function BookCard({ pages, readed, i }: Props) {
                 {readed} / {pages}
               </Typography>
               <Paper
-                className='relative mt-2 h-4 w-full rounded-lg bg-white/20'
+                className='relative mt-2 h-4 w-full rounded-lg bg-black/20'
                 variant='elevation'
                 elevation={3}
               >

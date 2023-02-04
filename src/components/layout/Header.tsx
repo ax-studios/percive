@@ -8,7 +8,12 @@ interface Props {
 
 export default function MenuAppBar({ title }: Props) {
   return (
-    <AppBar position='static'>
+    <AppBar
+      position='static'
+      sx={{
+        borderRadius: '0 0 1rem 1rem',
+      }}
+    >
       <Toolbar>
         <Typography variant='h3' component='div' sx={{ flexGrow: 1 }}>
           {title}

@@ -48,9 +48,11 @@ export default function HomePage() {
                 <Typography variant='h5' component='div'>
                   {quote?.quoteText}
                 </Typography>
-                <Typography variant='subtitle1' component='p'>
-                  - {quote?.quoteAuthor}
-                </Typography>
+                {quote && (
+                  <Typography variant='subtitle1' component='p'>
+                    - {quote?.quoteAuthor}
+                  </Typography>
+                )}
               </CardContent>
             </Card>
             <Typography sx={{ mt: '1rem' }} variant='h4'>

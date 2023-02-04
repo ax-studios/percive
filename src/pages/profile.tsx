@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Typography } from '@mui/material';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { logout } from '@/lib/appwrite';
 
@@ -9,6 +9,7 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 export default function ProfilePage() {
+  const router = useRouter();
   return (
     <Layout>
       <Seo templateTitle='Profile' />
@@ -36,10 +37,11 @@ export default function ProfilePage() {
           <Button
             className='bg-primary-500'
             variant='contained'
-            LinkComponent={Link}
             sx={{ width: '100%', mt: '1rem' }}
-            href='/'
-            onClick={logout}
+            onClick={() => {
+              logout();
+              router.replace('/auth/login');
+            }}
           >
             Logout{' '}
           </Button>

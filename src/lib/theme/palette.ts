@@ -65,7 +65,7 @@ export const lightPalette = {
     main: '#00B0FF',
   },
   primary: {
-    main: '#be123c',
+    main: '#7f66ee',
     contrastText: '#FFF',
   },
   secondary: {
@@ -78,7 +78,7 @@ export const lightPalette = {
     main: '#FFC400',
   },
   text: {
-    primary: palette.grey[500],
+    primary: palette.grey[900],
     secondary: palette.grey[500],
     disabled: palette.grey[300],
   },

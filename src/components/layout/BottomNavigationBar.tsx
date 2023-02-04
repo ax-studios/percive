@@ -19,7 +19,7 @@ export default function FixedBottomNavigation() {
   }, []);
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3} sx={{ py: 1 }}>
       <BottomNavigation
         showLabels
         value={value}
