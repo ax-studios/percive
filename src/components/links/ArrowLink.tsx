@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import UnderlineLink from '@/components/links/UnderlineLink';
-import { UnstyledLinkProps } from '@/components/links/UnstyledLink';
+import UnstyledLink, {
+  UnstyledLinkProps,
+} from '@/components/links/UnstyledLink';
 
 type ArrowLinkProps<C extends React.ElementType> = {
   as?: C;
@@ -18,7 +19,7 @@ export default function ArrowLink<C extends React.ElementType>({
   as,
   ...rest
 }: ArrowLinkProps<C>) {
-  const Component = as || UnderlineLink;
+  const Component = as || UnstyledLink;
 
   return (
     <Component
