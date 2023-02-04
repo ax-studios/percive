@@ -1,7 +1,7 @@
 {
   "theme_color": "#7f66ee",
   "background_color": "#7f66ee",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "name": "Percive - Your mental health matters",
